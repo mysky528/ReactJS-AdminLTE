@@ -30,7 +30,8 @@
     "react-dom": "^15.4.2",
     "velocity-animate": "^1.4.0",
     "webpack": "^1.14.0",
-    "webpack-raphael": "^2.1.4"
+    "webpack-raphael": "^2.1.4",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "chai": "^3.5.0",
@@ -44,6 +45,9 @@
   "scripts": {
     "dev": "node server.js",
     "test": "mocha test -u bdd -R spec",
-    "build": "webpack -p --config ./webpack.production.config.js"
-  }
+    "build": "webpack -p --config ./webpack.production.config.js",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "snyk": true
 }
